@@ -61,7 +61,7 @@
     .applicant-card a { color: #0066cc; text-decoration: none; }
     .applicant-card ol { padding-left: 20px; margin-top: 5px; }
     .timestamp { font-size: 0.8em; color: #777; text-align: right; margin-top: 1.5em; }
-    
+   
     .button-group {
         display: flex;
         justify-content: center;
@@ -128,7 +128,7 @@
             </div>
             <div class="timestamp">Submitted on: 5/13/2025 20:07:24</div>
         </div>
-        
+       
         <div class="applicant-card">
             <h3>Kyriaki Festeridou</h3>
             <p><strong>School:</strong> 1st Middle School of Pylea</p>
@@ -337,6 +337,48 @@
             <div class="timestamp">Submitted on: 7/2/2025 9:29:04</div>
         </div>
 
+        <div class="applicant-card">
+            <h3>Anna Maria Della Puppa</h3>
+            <p><strong>School:</strong> 1st Model Highschool of Thessaloniki</p>
+            <p><strong>Date of Birth:</strong> 31/03/2009</p>
+            <p><strong>Age Group:</strong> 15-16</p>
+            <p><strong>Email:</strong> <a href="mailto:am.dellapuppa@gmail.com">am.dellapuppa@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:6907062703">6907062703</a></p>
+            <p><strong>Committee Choices:</strong></p>
+            <ol><li class="committee-choice">WHO</li></ol>
+            <div class="button-group">
+                <button class="generate-button interview-button" onclick="generateInterviewInvitation(this)" data-full-name="Anna Maria Della Puppa">✉️ Interview Invitation</button>
+                <button class="generate-button acceptance-button" onclick="generateSOAcceptanceLetter(this)"
+                    data-full-name="Anna Maria Della Puppa"
+                    data-school="1st Model Highschool of Thessaloniki"
+                    data-email="am.dellapuppa@gmail.com">
+                    ⭐ Acceptance Letter
+                </button>
+            </div>
+            <div class="timestamp">Submitted on: 7/3/2025 14:32:20</div>
+        </div>
+
+        <div class="applicant-card">
+            <h3>Konstantinos Marmorkos</h3>
+            <p><strong>School:</strong> 1st Model High School of Thessaloniki</p>
+            <p><strong>Date of Birth:</strong> 27/11/2008</p>
+            <p><strong>Age Group:</strong> 15-16</p>
+            <p><strong>Email:</strong> <a href="mailto:kmarmorkos@gmail.com">kmarmorkos@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:6943291042">6943291042</a></p>
+            <p><strong>Committee Choices:</strong></p>
+            <ol><li class="committee-choice">Security Council</li></ol>
+            <div class="button-group">
+                <button class="generate-button interview-button" onclick="generateInterviewInvitation(this)" data-full-name="Konstantinos Marmorkos">✉️ Interview Invitation</button>
+                <button class="generate-button acceptance-button" onclick="generateSOAcceptanceLetter(this)"
+                    data-full-name="Konstantinos Marmorkos"
+                    data-school="1st Model High School of Thessaloniki"
+                    data-email="kmarmorkos@gmail.com">
+                    ⭐ Acceptance Letter
+                </button>
+            </div>
+            <div class="timestamp">Submitted on: 7/3/2025 22:56:12</div>
+        </div>
+
     </div>
   </main>
 
@@ -367,7 +409,7 @@
 
           const baseUrl = 'https://pyleamun.github.io/officer-acceptance-letter/';
           const params = new URLSearchParams();
-          
+         
           // Add data from the button's attributes
           params.append('fullName', buttonElement.dataset.fullName);
           params.append('school', buttonElement.dataset.school);
@@ -376,9 +418,9 @@
           // Add the data from the prompts
           params.append('position', position);
           params.append('committee', committee);
-          
+         
           const finalUrl = `${baseUrl}?${params.toString()}`;
-          window.open(finalUrl, '_blank');
+          window.open(_blank');
       }
   </script>
 
