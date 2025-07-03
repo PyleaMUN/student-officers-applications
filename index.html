@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Student Committee Applications - PyleaMUN</title>
+  <title>Student Applications Dashboard - PyleaMUN</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -12,7 +12,6 @@
       background-color: #E8EAE6;
       color: #333;
     }
-
     .letterhead {
       display: flex;
       justify-content: space-between;
@@ -22,55 +21,23 @@
       padding: 10px 20px;
       height: 100px;
     }
-
     .address, .contact {
       width: 25%;
       font-size: 0.9rem;
       color: #333;
     }
-
     .contact {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
     }
-
-    .contact div {
-      margin: 2px 0;
-    }
-
-    .logo {
-      width: 120px;
-      height: auto;
-    }
-
-    .letterhead a {
-      color: #0066cc;
-      text-decoration: none;
-    }
-
-    .letterhead a:hover {
-      text-decoration: underline;
-    }
-
-    main {
-      padding: 2em;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    h1 {
-      text-align: center;
-      color: #005b63;
-      margin-bottom: 1em;
-    }
-    
-    .card-container {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5em;
-    }
-
+    .contact div { margin: 2px 0; }
+    .logo { width: 120px; height: auto; }
+    .letterhead a { color: #0066cc; text-decoration: none; }
+    .letterhead a:hover { text-decoration: underline; }
+    main { padding: 2em; max-width: 1000px; margin: auto; }
+    h1 { text-align: center; color: #005b63; margin-bottom: 1em; }
+    .card-container { display: flex; flex-direction: column; gap: 1.5em; }
     .applicant-card {
         background: #ffffff;
         padding: 1.5em 2em;
@@ -78,7 +45,6 @@
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
         border-left: 5px solid #0056b3;
     }
-
     .applicant-card h3 {
         color: #004466;
         margin-top: 0;
@@ -86,50 +52,38 @@
         padding-bottom: 0.5em;
         font-size: 1.4em;
     }
-    
-    .applicant-card p {
-        margin: 0.5em 0;
-        line-height: 1.6;
-    }
-
+    .applicant-card p { margin: 0.5em 0; line-height: 1.6; }
     .applicant-card strong {
         color: #004466;
         min-width: 160px;
         display: inline-block;
     }
+    .applicant-card a { color: #0066cc; text-decoration: none; }
+    .applicant-card ol { padding-left: 20px; margin-top: 5px; }
+    .timestamp { font-size: 0.8em; color: #777; text-align: right; margin-top: 1.5em; }
     
-    .applicant-card a {
-        color: #0066cc;
-        text-decoration: none;
-    }
-    
-    .applicant-card ol {
-        padding-left: 20px;
-        margin-top: 5px;
-    }
-    
-    .timestamp {
-        font-size: 0.8em;
-        color: #777;
-        text-align: right;
+    .button-group {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
         margin-top: 1.5em;
+        flex-wrap: wrap;
     }
-
-    @media (max-width: 768px) {
-      .letterhead {
-        flex-direction: column;
-        height: auto;
+    .generate-button {
+        color: white;
         text-align: center;
-      }
-      .address, .contact {
-        width: 100%;
-        align-items: center;
-        margin-top: 10px;
-      }
-      .logo {
-        margin: 15px 0;
-      }
+        padding: 10px 25px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: bold;
+        transition: background-color 0.3s;
     }
+    .interview-button { background-color: #0056b3; }
+    .interview-button:hover { background-color: #004494; }
+    .acceptance-button { background-color: #43a047; }
+    .acceptance-button:hover { background-color: #388e3c; }
   </style>
 </head>
 <body>
@@ -150,7 +104,7 @@
   </div>
 
   <main>
-    <h1>📋 Student Committee Applications</h1>
+    <h1>📋 Student Officer & Committee Applications</h1>
 
     <div class="card-container">
 
@@ -158,11 +112,20 @@
             <h3>Ioannis Markadas</h3>
             <p><strong>School:</strong> 1st Middle School of Pylea</p>
             <p><strong>Date of Birth:</strong> 03.11.2010</p>
+            <p><strong>Age Group:</strong> 15-16</p>
             <p><strong>Email:</strong> <a href="mailto:sotmark@hotmail.com">sotmark@hotmail.com</a></p>
             <p><strong>Phone:</strong> <a href="tel:6970937447">6970937447</a></p>
-            <p><strong>Age Group:</strong> 15-16</p>
             <p><strong>Committee Choices:</strong></p>
-            <ol><li>SC</li><li>HRC</li><li>NATO</li></ol>
+            <ol><li class="committee-choice">SC</li><li>HRC</li><li>NATO</li></ol>
+            <div class="button-group">
+                <button class="generate-button interview-button" onclick="generateInterviewInvitation(this)" data-full-name="Ioannis Markadas">✉️ Interview Invitation</button>
+                <button class="generate-button acceptance-button" onclick="generateSOAcceptanceLetter(this)"
+                    data-full-name="Ioannis Markadas"
+                    data-school="1st Middle School of Pylea"
+                    data-email="sotmark@hotmail.com">
+                    ⭐ Acceptance Letter
+                </button>
+            </div>
             <div class="timestamp">Submitted on: 5/13/2025 20:07:24</div>
         </div>
         
@@ -170,10 +133,19 @@
             <h3>Kyriaki Festeridou</h3>
             <p><strong>School:</strong> 1st Middle School of Pylea</p>
             <p><strong>Date of Birth:</strong> 21/10/2011</p>
+            <p><strong>Age Group:</strong> 15-16</p>
             <p><strong>Email:</strong> <a href="mailto:del_fest@gmail.com">del_fest@gmail.com</a></p>
             <p><strong>Phone:</strong> <a href="tel:6971649565">6971649565</a></p>
-            <p><strong>Age Group:</strong> 15-16</p>
-            <p><strong>Committee Choices:</strong> Not specified</p>
+            <p><strong>Committee Choices:</strong> <span class="committee-choice">Not specified</span></p>
+            <div class="button-group">
+                <button class="generate-button interview-button" onclick="generateInterviewInvitation(this)" data-full-name="Kyriaki Festeridou">✉️ Interview Invitation</button>
+                <button class="generate-button acceptance-button" onclick="generateSOAcceptanceLetter(this)"
+                    data-full-name="Kyriaki Festeridou"
+                    data-school="1st Middle School of Pylea"
+                    data-email="del_fest@gmail.com">
+                    ⭐ Acceptance Letter
+                </button>
+            </div>
             <div class="timestamp">Submitted on: 5/14/2025 15:59:09</div>
         </div>
 
@@ -181,10 +153,19 @@
             <h3>Ioanna Beliou</h3>
             <p><strong>School:</strong> 1st Middle School of Pylea</p>
             <p><strong>Date of Birth:</strong> 06/12/2011</p>
+            <p><strong>Age Group:</strong> 15-16</p>
             <p><strong>Email:</strong> <a href="mailto:ioa.beliou@gmail.com">ioa.beliou@gmail.com</a></p>
             <p><strong>Phone:</strong> <a href="tel:6955379779">6955379779</a></p>
-            <p><strong>Age Group:</strong> 15-16</p>
-            <p><strong>Committee Choices:</strong> Not specified</p>
+            <p><strong>Committee Choices:</strong> <span class="committee-choice">Not specified</span></p>
+            <div class="button-group">
+                <button class="generate-button interview-button" onclick="generateInterviewInvitation(this)" data-full-name="Ioanna Beliou">✉️ Interview Invitation</button>
+                <button class="generate-button acceptance-button" onclick="generateSOAcceptanceLetter(this)"
+                    data-full-name="Ioanna Beliou"
+                    data-school="1st Middle School of Pylea"
+                    data-email="ioa.beliou@gmail.com">
+                    ⭐ Acceptance Letter
+                </button>
+            </div>
             <div class="timestamp">Submitted on: 5/14/2025 15:59:10</div>
         </div>
 
@@ -192,11 +173,20 @@
             <h3>Stelios Ramadanis</h3>
             <p><strong>School:</strong> 1st Middle School of Pylea</p>
             <p><strong>Date of Birth:</strong> 13/10/2010</p>
+            <p><strong>Age Group:</strong> 15-16</p>
             <p><strong>Email:</strong> <a href="mailto:stelram010@gmail.com">stelram010@gmail.com</a></p>
             <p><strong>Phone:</strong> <a href="tel:6938856686">6938856686</a></p>
-            <p><strong>Age Group:</strong> 15-16</p>
             <p><strong>Committee Choices:</strong></p>
-            <ol><li>Nato</li><li>Security Council</li></ol>
+            <ol><li class="committee-choice">Nato</li><li>Security Council</li></ol>
+            <div class="button-group">
+                <button class="generate-button interview-button" onclick="generateInterviewInvitation(this)" data-full-name="Stelios Ramadanis">✉️ Interview Invitation</button>
+                <button class="generate-button acceptance-button" onclick="generateSOAcceptanceLetter(this)"
+                    data-full-name="Stelios Ramadanis"
+                    data-school="1st Middle School of Pylea"
+                    data-email="stelram010@gmail.com">
+                    ⭐ Acceptance Letter
+                </button>
+            </div>
             <div class="timestamp">Submitted on: 5/15/2025 13:28:32</div>
         </div>
 
@@ -204,11 +194,20 @@
             <h3>Maria Sachinidou</h3>
             <p><strong>School:</strong> 1st Middle School of Pylea</p>
             <p><strong>Date of Birth:</strong> 08/09/2009</p>
+            <p><strong>Age Group:</strong> 15-16</p>
             <p><strong>Email:</strong> <a href="mailto:mariasachinidou97@gmail.com">mariasachinidou97@gmail.com</a></p>
             <p><strong>Phone:</strong> <a href="tel:6987066870">6987066870</a></p>
-            <p><strong>Age Group:</strong> 15-16</p>
             <p><strong>Committee Choices:</strong></p>
-            <ol><li>World Health Organization</li><li>UN Women</li></ol>
+            <ol><li class="committee-choice">World Health Organization</li><li>UN Women</li></ol>
+            <div class="button-group">
+                <button class="generate-button interview-button" onclick="generateInterviewInvitation(this)" data-full-name="Maria Sachinidou">✉️ Interview Invitation</button>
+                <button class="generate-button acceptance-button" onclick="generateSOAcceptanceLetter(this)"
+                    data-full-name="Maria Sachinidou"
+                    data-school="1st Middle School of Pylea"
+                    data-email="mariasachinidou97@gmail.com">
+                    ⭐ Acceptance Letter
+                </button>
+            </div>
             <div class="timestamp">Submitted on: 5/15/2025 18:17:41</div>
         </div>
 
@@ -216,11 +215,20 @@
             <h3>Ioanna Zarogianni</h3>
             <p><strong>School:</strong> 1st Middle School of Pylea</p>
             <p><strong>Date of Birth:</strong> 06/09/2010</p>
+            <p><strong>Age Group:</strong> 15-16</p>
             <p><strong>Email:</strong> <a href="mailto:joannazarogianni@gmail.com">joannazarogianni@gmail.com</a></p>
             <p><strong>Phone:</strong> <a href="tel:6983362073">6983362073</a></p>
-            <p><strong>Age Group:</strong> 15-16</p>
             <p><strong>Committee Choices:</strong></p>
-            <ol><li>NATO</li><li>Human Rights Council (HRC)</li><li>UN Women</li></ol>
+            <ol><li class="committee-choice">NATO</li><li>Human Rights Council (HRC)</li><li>UN Women</li></ol>
+            <div class="button-group">
+                <button class="generate-button interview-button" onclick="generateInterviewInvitation(this)" data-full-name="Ioanna Zarogianni">✉️ Interview Invitation</button>
+                <button class="generate-button acceptance-button" onclick="generateSOAcceptanceLetter(this)"
+                    data-full-name="Ioanna Zarogianni"
+                    data-school="1st Middle School of Pylea"
+                    data-email="joannazarogianni@gmail.com">
+                    ⭐ Acceptance Letter
+                </button>
+            </div>
             <div class="timestamp">Submitted on: 5/15/2025 20:07:03</div>
         </div>
 
@@ -228,11 +236,20 @@
             <h3>Sofia Sougari</h3>
             <p><strong>School:</strong> 1st Middle School of Pylea</p>
             <p><strong>Date of Birth:</strong> 06/09/2010</p>
+            <p><strong>Age Group:</strong> 15-16</p>
             <p><strong>Email:</strong> <a href="mailto:sougarisofia@gmail.com">sougarisofia@gmail.com</a></p>
             <p><strong>Phone:</strong> <a href="tel:6988560270">6988560270</a></p>
-            <p><strong>Age Group:</strong> 15-16</p>
             <p><strong>Committee Choices:</strong></p>
-            <ol><li>WHO</li><li>UN Environment Programme</li></ol>
+            <ol><li class="committee-choice">WHO</li><li>UN Environment Programme</li></ol>
+            <div class="button-group">
+                <button class="generate-button interview-button" onclick="generateInterviewInvitation(this)" data-full-name="Sofia Sougari">✉️ Interview Invitation</button>
+                <button class="generate-button acceptance-button" onclick="generateSOAcceptanceLetter(this)"
+                    data-full-name="Sofia Sougari"
+                    data-school="1st Middle School of Pylea"
+                    data-email="sougarisofia@gmail.com">
+                    ⭐ Acceptance Letter
+                </button>
+            </div>
             <div class="timestamp">Submitted on: 5/15/2025 23:09:17</div>
         </div>
 
@@ -240,11 +257,20 @@
             <h3>Lydia Vagiata</h3>
             <p><strong>School:</strong> 1st Junior High school of Pylea</p>
             <p><strong>Date of Birth:</strong> 24/03/2010</p>
+            <p><strong>Age Group:</strong> 15-16</p>
             <p><strong>Email:</strong> <a href="mailto:vagiata.lydia@icloud.com">vagiata.lydia@icloud.com</a></p>
             <p><strong>Phone:</strong> <a href="tel:6993569869">6993569869</a></p>
-            <p><strong>Age Group:</strong> 15-16</p>
             <p><strong>Committee Choices:</strong></p>
-            <ol><li>WHO</li><li>UN Women</li><li>UNEP</li><li>UNESCO</li></ol>
+            <ol><li class="committee-choice">WHO</li><li>UN Women</li><li>UNEP</li><li>UNESCO</li></ol>
+            <div class="button-group">
+                <button class="generate-button interview-button" onclick="generateInterviewInvitation(this)" data-full-name="Lydia Vagiata">✉️ Interview Invitation</button>
+                <button class="generate-button acceptance-button" onclick="generateSOAcceptanceLetter(this)"
+                    data-full-name="Lydia Vagiata"
+                    data-school="1st Junior High school of Pylea"
+                    data-email="vagiata.lydia@icloud.com">
+                    ⭐ Acceptance Letter
+                </button>
+            </div>
             <div class="timestamp">Submitted on: 5/19/2025 18:03:46</div>
         </div>
 
@@ -252,11 +278,20 @@
             <h3>Niki Tsitroudi</h3>
             <p><strong>School:</strong> American Farm School</p>
             <p><strong>Date of Birth:</strong> 08/06/2009</p>
+            <p><strong>Age Group:</strong> 15-16</p>
             <p><strong>Email:</strong> <a href="mailto:tsitroudiniki@gmail.com">tsitroudiniki@gmail.com</a></p>
             <p><strong>Phone:</strong> <a href="tel:+306909864137">+30 6909864137</a></p>
-            <p><strong>Age Group:</strong> 15-16</p>
             <p><strong>Committee Choices:</strong></p>
-            <ol><li>NATO/Security Council</li><li>ECOSOC</li></ol>
+            <ol><li class="committee-choice">NATO/Security Council</li><li>ECOSOC</li></ol>
+            <div class="button-group">
+                <button class="generate-button interview-button" onclick="generateInterviewInvitation(this)" data-full-name="Niki Tsitroudi">✉️ Interview Invitation</button>
+                <button class="generate-button acceptance-button" onclick="generateSOAcceptanceLetter(this)"
+                    data-full-name="Niki Tsitroudi"
+                    data-school="American Farm School"
+                    data-email="tsitroudiniki@gmail.com">
+                    ⭐ Acceptance Letter
+                </button>
+            </div>
             <div class="timestamp">Submitted on: 5/23/2025 16:54:20</div>
         </div>
 
@@ -264,28 +299,88 @@
             <h3>Danai Mastrokosta</h3>
             <p><strong>School:</strong> American Farm School of Thessaloniki</p>
             <p><strong>Date of Birth:</strong> 29/07/2010</p>
+            <p><strong>Age Group:</strong> 15-16</p>
             <p><strong>Email:</strong> <a href="mailto:dan.mastrok@gmail.com">dan.mastrok@gmail.com</a></p>
             <p><strong>Phone:</strong> <a href="tel:6974814201">6974814201</a></p>
-            <p><strong>Age Group:</strong> 15-16</p>
             <p><strong>Committee Choices:</strong></p>
-            <ol><li>HRC</li><li>WHO</li><li>NATO</li></ol>
+            <ol><li class="committee-choice">HRC</li><li>WHO</li><li>NATO</li></ol>
+            <div class="button-group">
+                <button class="generate-button interview-button" onclick="generateInterviewInvitation(this)" data-full-name="Danai Mastrokosta">✉️ Interview Invitation</button>
+                <button class="generate-button acceptance-button" onclick="generateSOAcceptanceLetter(this)"
+                    data-full-name="Danai Mastrokosta"
+                    data-school="American Farm School of Thessaloniki"
+                    data-email="dan.mastrok@gmail.com">
+                    ⭐ Acceptance Letter
+                </button>
+            </div>
             <div class="timestamp">Submitted on: 6/10/2025 17:38:35</div>
         </div>
 
         <div class="applicant-card">
             <h3>Maria Eleonora Mavrommati</h3>
-            <p><strong>School:</strong> American Farm School od Thessaloniki</p>
+            <p><strong>School:</strong> American Farm School of Thessaloniki</p>
             <p><strong>Date of Birth:</strong> 29/09/2010</p>
+            <p><strong>Age Group:</strong> 15-16</p>
             <p><strong>Email:</strong> <a href="mailto:nora.maria.mavrommati@gmail.com">nora.maria.mavrommati@gmail.com</a></p>
             <p><strong>Phone:</strong> <a href="tel:6981171417">6981171417</a></p>
-            <p><strong>Age Group:</strong> 15-16</p>
             <p><strong>Committee Choices:</strong></p>
-            <ol><li>Human Rights Council</li><li>Security Council</li><li>World Health Organisation</li></ol>
+            <ol><li class="committee-choice">Human Rights Council</li><li>Security Council</li><li>World Health Organisation</li></ol>
+            <div class="button-group">
+                <button class="generate-button interview-button" onclick="generateInterviewInvitation(this)" data-full-name="Maria Eleonora Mavrommati">✉️ Interview Invitation</button>
+                <button class="generate-button acceptance-button" onclick="generateSOAcceptanceLetter(this)"
+                    data-full-name="Maria Eleonora Mavrommati"
+                    data-school="American Farm School of Thessaloniki"
+                    data-email="nora.maria.mavrommati@gmail.com">
+                    ⭐ Acceptance Letter
+                </button>
+            </div>
             <div class="timestamp">Submitted on: 7/2/2025 9:29:04</div>
         </div>
 
     </div>
   </main>
+
+  <script>
+      function generateInterviewInvitation(buttonElement) {
+          const baseUrl = 'https://pyleamun.github.io/invitation-to-interview/';
+          const params = new URLSearchParams();
+          params.append('fullName', buttonElement.dataset.fullName);
+          const finalUrl = `${baseUrl}?${params.toString()}`;
+          window.open(finalUrl, '_blank');
+      }
+
+      function generateSOAcceptanceLetter(buttonElement) {
+          // Get the default first choice committee from the HTML list
+          const card = buttonElement.closest('.applicant-card');
+          const firstChoiceElement = card.querySelector('.committee-choice');
+          // Use the text content if the element is found, otherwise provide a sensible default.
+          const defaultCommittee = firstChoiceElement ? firstChoiceElement.textContent.trim() : 'Not Specified';
+
+          // Ask the user for the position and committee
+          const position = prompt("Please enter the assigned position (e.g., Chair, Vice-Chair):", "Chair");
+          const committee = prompt("Please enter the assigned committee:", defaultCommittee);
+
+          // If the user cancels either prompt, do nothing
+          if (position === null || committee === null) {
+              return; 
+          }
+
+          const baseUrl = 'https://pyleamun.github.io/officer-acceptance-letter/';
+          const params = new URLSearchParams();
+          
+          // Add data from the button's attributes
+          params.append('fullName', buttonElement.dataset.fullName);
+          params.append('school', buttonElement.dataset.school);
+          params.append('email', buttonElement.dataset.email);
+
+          // Add the data from the prompts
+          params.append('position', position);
+          params.append('committee', committee);
+          
+          const finalUrl = `${baseUrl}?${params.toString()}`;
+          window.open(finalUrl, '_blank');
+      }
+  </script>
 
 </body>
 </html>
