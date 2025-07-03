@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Committee Applications - PyleaMUN</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #E8EAE6;
+      color: #333;
+    }
+
+    .letterhead {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #D6DBD2;
+      border-bottom: 2px solid #444;
+      padding: 10px 20px;
+      height: 100px;
+    }
+
+    .address, .contact {
+      width: 25%;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .contact {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .contact div {
+      margin: 2px 0;
+    }
+
+    .logo {
+      width: 120px;
+      height: auto;
+    }
+
+    .letterhead a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    .letterhead a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 2em;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #005b63;
+      margin-bottom: 1em;
+    }
+    
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+    }
+
+    .applicant-card {
+        background: #ffffff;
+        padding: 1.5em 2em;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        border-left: 5px solid #0056b3;
+    }
+
+    .applicant-card h3 {
+        color: #004466;
+        margin-top: 0;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 0.5em;
+        font-size: 1.4em;
+    }
+    
+    .applicant-card p {
+        margin: 0.5em 0;
+        line-height: 1.6;
+    }
+
+    .applicant-card strong {
+        color: #004466;
+        min-width: 160px;
+        display: inline-block;
+    }
+    
+    .applicant-card a {
+        color: #0066cc;
+        text-decoration: none;
+    }
+    
+    .applicant-card ol {
+        padding-left: 20px;
+        margin-top: 5px;
+    }
+    
+    .timestamp {
+        font-size: 0.8em;
+        color: #777;
+        text-align: right;
+        margin-top: 1.5em;
+    }
+
+    @media (max-width: 768px) {
+      .letterhead {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+      }
+      .address, .contact {
+        width: 100%;
+        align-items: center;
+        margin-top: 10px;
+      }
+      .logo {
+        margin: 15px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="letterhead">
+    <div class="address">
+      <strong>4 Isminis Str.</strong><br>
+      Pylaia, Thessaloniki - 55535
+    </div>
+    <div>
+      <img src="https://pyleamun.github.io/interview-guide/pyleaMUNfinallogo_transparent.png" alt="PyleaMUN Logo" class="logo">
+    </div>
+    <div class="contact">
+      <div>📞 +30 2310329199</div>
+      <div>📧 <a href="mailto:pyleamun@gmail.com">pyleamun@gmail.com</a></div>
+      <div>🌐 <a href="https://pyleamun.github.io/pyleamun2026/" target="_blank">pyleamun.github.io/pyleamun2026</a></div>
+    </div>
+  </div>
+
+  <main>
+    <h1>📋 Student Committee Applications</h1>
+
+    <div class="card-container">
+
+        <div class="applicant-card">
+            <h3>Ioannis Markadas</h3>
+            <p><strong>School:</strong> 1st Middle School of Pylea</p>
+            <p><strong>Date of Birth:</strong> 03.11.2010</p>
+            <p><strong>Email:</strong> <a href="mailto:sotmark@hotmail.com">sotmark@hotmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:6970937447">6970937447</a></p>
+            <p><strong>Age Group:</strong> 15-16</p>
+            <p><strong>Committee Choices:</strong></p>
+            <ol><li>SC</li><li>HRC</li><li>NATO</li></ol>
+            <div class="timestamp">Submitted on: 5/13/2025 20:07:24</div>
+        </div>
+        
+        <div class="applicant-card">
+            <h3>Kyriaki Festeridou</h3>
+            <p><strong>School:</strong> 1st Middle School of Pylea</p>
+            <p><strong>Date of Birth:</strong> 21/10/2011</p>
+            <p><strong>Email:</strong> <a href="mailto:del_fest@gmail.com">del_fest@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:6971649565">6971649565</a></p>
+            <p><strong>Age Group:</strong> 15-16</p>
+            <p><strong>Committee Choices:</strong> Not specified</p>
+            <div class="timestamp">Submitted on: 5/14/2025 15:59:09</div>
+        </div>
+
+        <div class="applicant-card">
+            <h3>Ioanna Beliou</h3>
+            <p><strong>School:</strong> 1st Middle School of Pylea</p>
+            <p><strong>Date of Birth:</strong> 06/12/2011</p>
+            <p><strong>Email:</strong> <a href="mailto:ioa.beliou@gmail.com">ioa.beliou@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:6955379779">6955379779</a></p>
+            <p><strong>Age Group:</strong> 15-16</p>
+            <p><strong>Committee Choices:</strong> Not specified</p>
+            <div class="timestamp">Submitted on: 5/14/2025 15:59:10</div>
+        </div>
+
+        <div class="applicant-card">
+            <h3>Stelios Ramadanis</h3>
+            <p><strong>School:</strong> 1st Middle School of Pylea</p>
+            <p><strong>Date of Birth:</strong> 13/10/2010</p>
+            <p><strong>Email:</strong> <a href="mailto:stelram010@gmail.com">stelram010@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:6938856686">6938856686</a></p>
+            <p><strong>Age Group:</strong> 15-16</p>
+            <p><strong>Committee Choices:</strong></p>
+            <ol><li>Nato</li><li>Security Council</li></ol>
+            <div class="timestamp">Submitted on: 5/15/2025 13:28:32</div>
+        </div>
+
+        <div class="applicant-card">
+            <h3>Maria Sachinidou</h3>
+            <p><strong>School:</strong> 1st Middle School of Pylea</p>
+            <p><strong>Date of Birth:</strong> 08/09/2009</p>
+            <p><strong>Email:</strong> <a href="mailto:mariasachinidou97@gmail.com">mariasachinidou97@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:6987066870">6987066870</a></p>
+            <p><strong>Age Group:</strong> 15-16</p>
+            <p><strong>Committee Choices:</strong></p>
+            <ol><li>World Health Organization</li><li>UN Women</li></ol>
+            <div class="timestamp">Submitted on: 5/15/2025 18:17:41</div>
+        </div>
+
+        <div class="applicant-card">
+            <h3>Ioanna Zarogianni</h3>
+            <p><strong>School:</strong> 1st Middle School of Pylea</p>
+            <p><strong>Date of Birth:</strong> 06/09/2010</p>
+            <p><strong>Email:</strong> <a href="mailto:joannazarogianni@gmail.com">joannazarogianni@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:6983362073">6983362073</a></p>
+            <p><strong>Age Group:</strong> 15-16</p>
+            <p><strong>Committee Choices:</strong></p>
+            <ol><li>NATO</li><li>Human Rights Council (HRC)</li><li>UN Women</li></ol>
+            <div class="timestamp">Submitted on: 5/15/2025 20:07:03</div>
+        </div>
+
+        <div class="applicant-card">
+            <h3>Sofia Sougari</h3>
+            <p><strong>School:</strong> 1st Middle School of Pylea</p>
+            <p><strong>Date of Birth:</strong> 06/09/2010</p>
+            <p><strong>Email:</strong> <a href="mailto:sougarisofia@gmail.com">sougarisofia@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:6988560270">6988560270</a></p>
+            <p><strong>Age Group:</strong> 15-16</p>
+            <p><strong>Committee Choices:</strong></p>
+            <ol><li>WHO</li><li>UN Environment Programme</li></ol>
+            <div class="timestamp">Submitted on: 5/15/2025 23:09:17</div>
+        </div>
+
+        <div class="applicant-card">
+            <h3>Lydia Vagiata</h3>
+            <p><strong>School:</strong> 1st Junior High school of Pylea</p>
+            <p><strong>Date of Birth:</strong> 24/03/2010</p>
+            <p><strong>Email:</strong> <a href="mailto:vagiata.lydia@icloud.com">vagiata.lydia@icloud.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:6993569869">6993569869</a></p>
+            <p><strong>Age Group:</strong> 15-16</p>
+            <p><strong>Committee Choices:</strong></p>
+            <ol><li>WHO</li><li>UN Women</li><li>UNEP</li><li>UNESCO</li></ol>
+            <div class="timestamp">Submitted on: 5/19/2025 18:03:46</div>
+        </div>
+
+        <div class="applicant-card">
+            <h3>Niki Tsitroudi</h3>
+            <p><strong>School:</strong> American Farm School</p>
+            <p><strong>Date of Birth:</strong> 08/06/2009</p>
+            <p><strong>Email:</strong> <a href="mailto:tsitroudiniki@gmail.com">tsitroudiniki@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+306909864137">+30 6909864137</a></p>
+            <p><strong>Age Group:</strong> 15-16</p>
+            <p><strong>Committee Choices:</strong></p>
+            <ol><li>NATO/Security Council</li><li>ECOSOC</li></ol>
+            <div class="timestamp">Submitted on: 5/23/2025 16:54:20</div>
+        </div>
+
+        <div class="applicant-card">
+            <h3>Danai Mastrokosta</h3>
+            <p><strong>School:</strong> American Farm School of Thessaloniki</p>
+            <p><strong>Date of Birth:</strong> 29/07/2010</p>
+            <p><strong>Email:</strong> <a href="mailto:dan.mastrok@gmail.com">dan.mastrok@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:6974814201">6974814201</a></p>
+            <p><strong>Age Group:</strong> 15-16</p>
+            <p><strong>Committee Choices:</strong></p>
+            <ol><li>HRC</li><li>WHO</li><li>NATO</li></ol>
+            <div class="timestamp">Submitted on: 6/10/2025 17:38:35</div>
+        </div>
+
+        <div class="applicant-card">
+            <h3>Maria Eleonora Mavrommati</h3>
+            <p><strong>School:</strong> American Farm School od Thessaloniki</p>
+            <p><strong>Date of Birth:</strong> 29/09/2010</p>
+            <p><strong>Email:</strong> <a href="mailto:nora.maria.mavrommati@gmail.com">nora.maria.mavrommati@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:6981171417">6981171417</a></p>
+            <p><strong>Age Group:</strong> 15-16</p>
+            <p><strong>Committee Choices:</strong></p>
+            <ol><li>Human Rights Council</li><li>Security Council</li><li>World Health Organisation</li></ol>
+            <div class="timestamp">Submitted on: 7/2/2025 9:29:04</div>
+        </div>
+
+    </div>
+  </main>
+
+</body>
+</html>
